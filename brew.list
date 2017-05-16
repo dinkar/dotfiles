@@ -1,0 +1,4 @@
+wget
+tmux
+macvim --env-std --with-override-system-vim
+z
