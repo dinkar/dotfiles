@@ -46,3 +46,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 inoremap jk <esc>
+
+" Allow backspacing everything in insert mode
+set backspace=indent,eol,start
