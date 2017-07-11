@@ -1,12 +1,12 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-syntax enable                 " Syntax highlighting
+set nocompatible                " be iMproved, required
+filetype off                    " required
+syntax enable                   " Syntax highlighting
 set tabstop=4
 set softtabstop=4
-set wildmenu			" visual autocomplete for command menu
-set showmatch           " highlight matching [{()}]
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set wildmenu                    " visual autocomplete for command menu
+set showmatch                   " highlight matching [{()}]
+set incsearch                   " search as characters are entered
+set hlsearch                    " highlight matches
 
 set rtp+=~/.vim/bundle/Vundle.vim       " set the runtime path to include Vundle and initialize
 call vundle#begin()                     " alternatively, pass a path where Vundle should install plugins
@@ -29,12 +29,13 @@ set termencoding=utf-8
 " End of powerline settings
 
 set autoindent
-set ignorecase	" ignore case matching in search keywords
-set nu	" show line numbers
+set ignorecase                  " ignore case matching in search keywords
+set nu                          " show line numbers
 set title
 set scrolloff=5
-set laststatus=2	" show line status
-set autoread " Set to auto read when a file is changed from the outside
+set laststatus=2                " show line status
+set autoread                    " Set to auto read when a file is changed from the outside
+set backspace=indent,eol,start  " Allow backspacing everything in insert mode
 
 " highlight current line
 set cursorline cursorcolumn
@@ -46,6 +47,3 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 inoremap jk <esc>
-
-" Allow backspacing everything in insert mode
-set backspace=indent,eol,start
