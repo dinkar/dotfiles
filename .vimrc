@@ -32,7 +32,7 @@ set autoindent
 set ignorecase                  " ignore case matching in search keywords
 set nu                          " show line numbers
 set title
-set scrolloff=5
+set scrolloff=5                 " set scroll offset of from the top and bottom
 set laststatus=2                " show line status
 set autoread                    " Set to auto read when a file is changed from the outside
 set backspace=indent,eol,start  " Allow backspacing everything in insert mode
