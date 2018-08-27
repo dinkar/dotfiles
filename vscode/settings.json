@@ -1,0 +1,12 @@
+{
+    "workbench.statusBar.feedback.visible": false,
+    "files.autoSave": "onFocusChange",
+    "gitlens.gitExplorer.enabled": false,
+    "gitlens.historyExplorer.enabled": false,
+    "gitlens.mode.statusBar.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+}
