@@ -65,10 +65,10 @@ brew install wget --with-iri
 #grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 # Install more recent versions of some OS X tools.
-brew install vim --with-override-system--vi #--override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
+#brew install vim --with-override-system--vi #--override-system-vi
 #brew install homebrew/php/php55 --with-gmp
 
 # Install font tools.
@@ -78,45 +78,48 @@ brew install homebrew/dupes/screen
 #brew install woff2
 
 # Install other useful binaries.
-#brew install ack
-#brew install dark-mode
-#brew install exiv2
 brew install git
 brew install git-lfs
 brew install git-flow
 brew install git-extras
 brew install z
+brew install tmux
+#brew install ack
+#brew install dark-mode
+#brew install exiv2
 
 # Install Heroku
 #brew install heroku-toolbelt
 #heroku update
 
 # Core casks
+brew cask install --appdir="/Applications" iterm2
 #brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="~/Applications" iterm2
 #brew cask install --appdir="~/Applications" java
 #brew cask install --appdir="~/Applications" xquartz
 
 # Development tool casks
 #brew cask install --appdir="/Applications" sublime-text
 #brew cask install --appdir="/Applications" atom
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" vagrant
-brew cask install --appdir="/Applications" macdown
+#brew cask install --appdir="/Applications" virtualbox
+#brew cask install --appdir="/Applications" vagrant
+#brew cask install --appdir="/Applications" macdown
 
 # Misc casks
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" firefox
-#brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" slack
+brew cask install --appdir="/Applications" clipy
 brew cask install --appdir="/Applications" dropbox
-#brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" 1password
-#brew cask install --appdir="/Applications" gimp
-#brew cask install --appdir="/Applications" inkscape
 brew cask install --appdir="/Applications" visual-studio-code
 brew cask install --appdir="/Applications" spectacle
 brew cask install --appdir="/Applications" spotify
+brew cask install --appdir="/Applications" vlc
+#brew cask install --appdir="/Applications" gimp
+#brew cask install --appdir="/Applications" inkscape
+#brew cask install --appdir="/Applications" evernote
+#brew cask install --appdir="/Applications" skype
+#brew cask install --appdir="/Applications" slack
 
 # Install Docker, which requires virtualbox
 brew install docker
