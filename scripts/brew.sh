@@ -97,6 +97,8 @@ brew cask install --appdir="/Applications" iterm2
 #brew cask install --appdir="/Applications" alfred
 #brew cask install --appdir="~/Applications" java
 #brew cask install --appdir="~/Applications" xquartz
+brew tap caskroom/versions
+brew cask install java8
 
 # Development tool casks
 #brew cask install --appdir="/Applications" sublime-text
