@@ -19,5 +19,5 @@
     "terminal.integrated.fontFamily": "\"Menlo for Powerline\"",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
-    "window.title": "${activeEditorMedium}${separator}${rootName}"
+    "window.title": "${rootName}${separator}${activeEditorMedium} ${dirty}"
 }
