@@ -110,6 +110,7 @@ brew cask install java8
 # Misc casks
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" firefox
+#brew cask install --appdir="/Applications" gimp
 brew cask install --appdir="/Applications" clipy
 brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" 1password
@@ -117,7 +118,6 @@ brew cask install --appdir="/Applications" visual-studio-code
 brew cask install --appdir="/Applications" spectacle
 brew cask install --appdir="/Applications" spotify
 brew cask install --appdir="/Applications" vlc
-#brew cask install --appdir="/Applications" gimp
 #brew cask install --appdir="/Applications" inkscape
 #brew cask install --appdir="/Applications" evernote
 #brew cask install --appdir="/Applications" skype
