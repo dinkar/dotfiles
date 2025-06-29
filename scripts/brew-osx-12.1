@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
 # Ask for the administrator password upfront.
 sudo -v
@@ -8,11 +9,10 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Check for Homebrew,
-# Install if we don't have it
-if test ! $(which brew); then
-  echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Check for Homebrew and install it if it's not already present.
+if ! command -v brew >/dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Make sure we’re using the latest Homebrew.
@@ -21,28 +21,25 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# Install GNU core utilities (those that come with OS X are outdated).
+# Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
-# Install some other useful utilities like `sponge`.
-#brew install moreutils
+# Create a symlink for sha256sum, compatible with both Intel and Apple Silicon Macs.
+# This will overwrite an existing symlink if it exists.
+ln -sf "$(brew --prefix)/bin/gsha256sum" "$(brew --prefix)/bin/sha256sum"
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 
-# Install GNU `sed`, overwriting the built-in `sed`.
-# brew install gnu-sed --with-default-names
-# brew tap homebrew/versions
+# Install shell completion.
 brew install bash-completion2
 
 # Install `wget`
 brew install wget
 
-# Install more recent versions of some OS X tools.
+# Install more recent versions of some macOS tools.
 brew install grep
-# brew install openssh # Not installing as it causes issues with the system ssh for git ssh etc.
 brew install screen
 
 # Install other useful binaries.
@@ -53,38 +50,31 @@ brew install git-extras
 brew install z
 brew install tmux
 
+# --- Casks ---
+
 # Core casks
 brew install --cask iterm2
 brew install --cask ghostty
-# brew tap caskroom/versions
-# brew tap homebrew/cask-versions
-brew install --cask java8
+brew install --cask visual-studio-code
 
 # Development tool casks
-# brew install --cask sublime-text
+brew tap homebrew/cask-versions
+brew install --cask temurin8 # Replaces the unavailable `java8` cask
 
 # Misc casks
 brew install --cask google-chrome
 brew install --cask firefox
 brew install --cask clipy
-# brew install --cask dropbox
 brew install --cask 1password
-brew install --cask visual-studio-code
-
-# Spectacle unavailable on brew anymore
-# brew install --cask spectacle
-
 brew install --cask spotify
-# brew install --cask vlc
 brew install --cask raycast
 brew install --cask obsidian
 brew install --cask reader
 brew install --cask ticktick
 brew install --cask itsycal
 
-# Install Docker, which requires virtualbox
-# brew install docker
-# brew install boot2docker
+# Install Docker Desktop
+brew install --cask docker
 
 # Install m-cli
 # The latest version on brew is based on python. This causes problem in new OS versions,
