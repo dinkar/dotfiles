@@ -19,7 +19,7 @@ fi
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -28,20 +28,22 @@ sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
 # Install some other useful utilities like `sponge`.
 #brew install moreutils
+
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
+
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-brew tap homebrew/versions
+# brew install gnu-sed --with-default-names
+# brew tap homebrew/versions
 brew install bash-completion2
 
 # Install `wget`
 brew install wget
 
 # Install more recent versions of some OS X tools.
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
+brew install grep
+# brew install openssh # Not installing as it causes issues with the system ssh for git ssh etc.
+brew install screen
 
 # Install other useful binaries.
 brew install git
@@ -52,31 +54,44 @@ brew install z
 brew install tmux
 
 # Core casks
-brew install --appdir="/Applications" --cask iterm2
+brew install --cask iterm2
+brew install --cask ghostty
 # brew tap caskroom/versions
-brew tap homebrew/cask-versions
+# brew tap homebrew/cask-versions
 brew install --cask java8
 
 # Development tool casks
-brew install --appdir="/Applications" --cask sublime-text
+# brew install --cask sublime-text
 
 # Misc casks
-brew install --appdir="/Applications" --cask google-chrome
-brew install --appdir="/Applications" --cask firefox
-brew install --appdir="/Applications" --cask clipy
-brew install --appdir="/Applications" --cask dropbox
-brew install --appdir="/Applications" --cask 1password
-brew install --appdir="/Applications" --cask visual-studio-code
-brew install --appdir="/Applications" --cask spectacle
-brew install --appdir="/Applications" --cask spotify
-brew install --appdir="/Applications" --cask vlc
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask clipy
+# brew install --cask dropbox
+brew install --cask 1password
+brew install --cask visual-studio-code
+
+# Spectacle unavailable on brew anymore
+# brew install --cask spectacle
+
+brew install --cask spotify
+# brew install --cask vlc
+brew install --cask raycast
+brew install --cask obsidian
+brew install --cask reader
+brew install --cask ticktick
+brew install --cask itsycal
 
 # Install Docker, which requires virtualbox
-brew install docker
-brew install boot2docker
+# brew install docker
+# brew install boot2docker
 
 # Install m-cli
-brew install m-cli
+# The latest version on brew is based on python. This causes problem in new OS versions,
+# since python is not installed by default. The manual install (https://github.com/rgcr/m-cli?tab=readme-ov-file#manual-install)
+# uses the latest github version which uses python3. Prefer this manual version until m-cli > 0.30.0 is available.
+# brew install m-cli
+curl -fsSL https://raw.githubusercontent.com/rgcr/m-cli/master/install.sh | sudo sh
 
 # Remove outdated versions from the cellar.
 brew cleanup
